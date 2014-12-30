@@ -4,7 +4,14 @@ $(function () {
     $element: $('#mySelectDropdown'),
     $container: $('.body'),
     getText: function (dropdown, e) {
-      return 'Hello World';
+      var text = 'Select Stuff ...';
+
+      var $checked = $(dropdown.$body).find(':checked');
+      if ($checked.length > 0) {
+        text = $checked.length + ' items selected!';
+      }
+
+      return text;
     }
   });
 

@@ -9,10 +9,6 @@ var SelectDropdown = (function () {
     this.$text = this.$element.find('.multiselect__control-text');
     this.getText = params.getText;
 
-    this.$text.text(this.getText());
-
-
-
     /* add multiselect class so that other methods can rely on it's presence */
     this.$element.addClass('multiselect');
 
@@ -45,6 +41,10 @@ var SelectDropdown = (function () {
       });
 
     });
+
+    // set text on certain events
+    this.$element.on('change', function () { this.handleChange(); }.bind(this));
+    this.updateText();
   };
 
   Multiselect.prototype = {
@@ -107,6 +107,14 @@ var SelectDropdown = (function () {
 
     unlockScroll: function () {
       this.$container.removeClass('ddm-menu-container__content--scroll-lock');
+    },
+
+    handleChange: function (e) {
+      this.updateText(e);
+    },
+
+    updateText: function (e) {
+      this.$text.text(this.getText(this, e));
     }
   };
 
