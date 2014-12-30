@@ -1,8 +1,8 @@
 var gulp = require('gulp');
 
-gulp.task('watch', ['example'], function () {
+gulp.task('watch', ['build'], function () {
   gulp.watch([
     './src/**/*',
     './example/src/**/*'
-  ], ['example']);
+  ], ['build']);
 });
