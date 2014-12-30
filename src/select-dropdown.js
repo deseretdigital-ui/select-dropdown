@@ -6,7 +6,12 @@ var SelectDropdown = (function () {
     this.$control = this.$element.find('.multiselect__control');
     this.$body = this.$element.find('.multiselect__dropdown');
     this.$container = params.$container;
+    this.$text = this.$element.find('.multiselect__control-text');
     this.getText = params.getText;
+
+    this.$text.text(this.getText());
+
+
 
     /* add multiselect class so that other methods can rely on it's presence */
     this.$element.addClass('multiselect');
