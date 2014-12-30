@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- these meta tags are important -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta http-equiv="x-ua-compatible" content="IE=edge" />
+
+  <title>SelectDropdown Example</title>
+
+  <link href="example.css" rel="stylesheet" />
+
+  <script src="select-dropdown.js"></script>
+  <script src="example.js"></script>
+
+</head>
+<body>
+
+  <div class="multiselect" id="mySelectDropdown">
+    <div class="multiselect__control multiselect__toggle">
+      <select class="form__input" id="make">
+        <option class="multiselect__control-text">Select</option>
+      </select>
+    </div>
+    <div class="multiselect__dropdown">
+      <span class="icon-close multiselect__toggle"></span>
+      <a href="#" class="remove-all">Remove all</a>
+      <ul class="options">
+        <li class="options__head">Basement</li>
+        <li class="options__item">
+          <label>
+            <input type="checkbox" value="Full – Finished" class="options__checkbox">
+            <div class="options__text">Full - Finished</div>
+            <div class="options__count">123</div>
+          </label>
+        </li>
+        <li class="options__item">
+          <label>
+            <input type="checkbox" value="Full – Partially Finished" class="options__checkbox">
+            <div class="options__text">Full - Partially Finished</div>
+            <div class="options__count">123</div>
+          </label>
+        </li>
+        <li class="options__item">
+          <label>
+            <input type="checkbox" value="Full – Unfinished" class="options__checkbox">
+            <div class="options__text">Full - Unfinished</div>
+            <div class="options__count">123</div>
+          </label>
+        </li>
+        <li class="options__item">
+          <label>
+            <input type="checkbox" value="Shelf/Crawl Space" class="options__checkbox">
+            <div class="options__text">Shelf/Crawl Space</div>
+            <div class="options__count">123</div>
+          </label>
+        </li>
+        <li class="options__head">Cooling Types</li>
+        <li class="options__item">
+          <label>
+            <input type="checkbox" value="Central Air" class="options__checkbox">
+            <div class="options__text">Central Air</div>
+          </label>
+        </li>
+        <li class="options__item">
+          <label>
+            <input type="checkbox" value="Air Conditioning – Window" class="options__checkbox">
+            <div class="options__text">Air Conditioning - Window</div>
+          </label>
+        </li>
+        <li class="options__item">
+          <label>
+            <input type="checkbox" value="Evaporative Cooler – Roof" class="options__checkbox">
+            <div class="options__text">Evaporative Cooler - Roof</div>
+          </label>
+        </li>
+        <li class="options__item">
+          <label>
+            <input type="checkbox" value="Evaporative Cooler – Window" class="options__checkbox">
+            <div class="options__text">Evaporative Cooler - Window</div>
+          </label>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>

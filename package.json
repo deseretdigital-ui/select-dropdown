@@ -1,0 +1,24 @@
+{
+  "name": "select-dropdown",
+  "version": "0.0.1",
+  "description": "A dropdown with a non-functional select element for a toggle.",
+  "main": "select-dropdown.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deseretdigital-ui/select-dropdown.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deseretdigital-ui/select-dropdown/issues"
+  },
+  "homepage": "https://github.com/deseretdigital-ui/select-dropdown",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-gh-pages": "^0.4.0",
+    "require-dir": "^0.1.0"
+  }
+}
