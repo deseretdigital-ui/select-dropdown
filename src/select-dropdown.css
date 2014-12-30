@@ -1,0 +1,41 @@
+.multiselect__control,
+.multiselect-wrapper {
+  position: relative;
+}
+
+.multiselect__control:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+.multiselect__dropdown {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #a6a6a6;
+  padding: 20px;
+  background: #fff;
+  display: none;
+  z-index: 300;
+  min-height: 200px;
+  max-height: 70%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.multiselect--open .multiselect__dropdown {
+  z-index: 301;
+}
+
+.multiselect__dropdown .remove-all {
+  display: inline-block;
+  font-size: 14px;
+  margin-bottom: 10px;
+}

@@ -2,7 +2,7 @@ var gulp = require('gulp');
 
 gulp.task('example/dist', function () {
   var config = {
-    src: ['./src/select-dropdown.js'],
+    src: ['./src/select-dropdown.*'],
     dest: './example/build/bower_components/select-dropdown/src'
   };
 

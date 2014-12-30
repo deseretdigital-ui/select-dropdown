@@ -1,17 +1,18 @@
 var SelectDropdown = (function () {
 
-  var Multiselect = function ($multiselect, $container) {
-    this.$multiselect = $multiselect;
-    this.$toggle = $multiselect.find('.multiselect__toggle');
-    this.$control = $multiselect.find('.multiselect__control');
-    this.$body = $multiselect.find('.multiselect__dropdown');
-    this.$container = $container;
+  var Multiselect = function (params) {
+    this.$element = params.$element;
+    this.$toggle = this.$element.find('.multiselect__toggle');
+    this.$control = this.$element.find('.multiselect__control');
+    this.$body = this.$element.find('.multiselect__dropdown');
+    this.$container = params.$container;
+    this.getText = params.getText;
 
     /* add multiselect class so that other methods can rely on it's presence */
-    this.$multiselect.addClass('multiselect');
+    this.$element.addClass('multiselect');
 
     /* attach reference to object for event handlers to be able to access */
-    this.$multiselect.data('multiselect', this);
+    this.$element.data('multiselect', this);
 
     var multiselect = this;
 
@@ -48,13 +49,13 @@ var SelectDropdown = (function () {
     },
 
     isOpen: function () {
-      return this.$multiselect.hasClass('multiselect--open');
+      return this.$element.hasClass('multiselect--open');
     },
 
     open: function () {
       // close all other multiselects
-      $('.multiselect--open').not(this.$multiselect).each(function (index, multiselect) { $(multiselect).data('multiselect').close(); });
-      this.$multiselect.addClass('multiselect--open');
+      $('.multiselect--open').not(this.$element).each(function (index, multiselect) { $(multiselect).data('multiselect').close(); });
+      this.$element.addClass('multiselect--open');
       this.$body.slideDown(200);
 
       if (this.isMobile()) {
@@ -69,7 +70,7 @@ var SelectDropdown = (function () {
       }
       $(':focus').blur();
       this.$body.slideUp(200);
-      this.$multiselect.removeClass('multiselect--open');
+      this.$element.removeClass('multiselect--open');
 
       if (this.isMobile()) {
         this.unlockScroll();
@@ -86,7 +87,7 @@ var SelectDropdown = (function () {
 
     scrollToToggle: function () {
       var firstChildOffset = Math.floor(this.$container.find(":first-child").offset().top);
-      var targetOffset = Math.floor(this.$multiselect.eq(0).offset().top);
+      var targetOffset = Math.floor(this.$element.eq(0).offset().top);
       var offset = 30;
       var scrollTop = targetOffset - firstChildOffset - offset;
 
