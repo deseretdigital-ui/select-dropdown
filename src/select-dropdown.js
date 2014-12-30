@@ -1,66 +1,66 @@
 var SelectDropdown = (function () {
 
-  var Multiselect = function (params) {
+  var SelectDropdown = function (params) {
     this.$element = params.$element;
-    this.$toggle = this.$element.find('.multiselect__toggle');
-    this.$control = this.$element.find('.multiselect__control');
-    this.$body = this.$element.find('.multiselect__dropdown');
+    this.$toggle = this.$element.find('.select-dropdown__toggle');
+    this.$control = this.$element.find('.select-dropdown__control');
+    this.$body = this.$element.find('.select-dropdown__dropdown');
     this.$container = params.$container;
-    this.$text = this.$element.find('.multiselect__control-text');
+    this.$text = this.$element.find('.select-dropdown__control-text');
     this.getText = params.getText;
 
-    /* add multiselect class so that other methods can rely on it's presence */
-    this.$element.addClass('multiselect');
+    /* add dropdown class so that other methods can rely on it's presence */
+    this.$element.addClass('select-dropdown');
 
     /* attach reference to object for event handlers to be able to access */
-    this.$element.data('multiselect', this);
+    this.$element.data('select-dropdown', this);
 
-    var multiselect = this;
+    var dropdown = this;
 
     /* bind events */
     $(document).on('ready', function () {
 
       /* wire up toggle */
-      multiselect.$toggle.on('click', function(e) {
+      dropdown.$toggle.on('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
 
         // avoid native select dropdown
         $(this).find('select').blur();
 
-        // open lmultiselect dropdown
-        multiselect.toggle();
+        // open ldropdown dropdown
+        dropdown.toggle();
       });
 
       /* click outside to close */
-      $(document).on('click.multiselect touchstart.multiselect', function (event) {
-        var inMultiselect = $(event.target).closest('.multiselect').length > 0;
-        if (!inMultiselect) {
-          $('.multiselect').each(function (index, multiselect) { $(multiselect).data('multiselect').close(); });
+      $(document).on('click.select-dropdown touchstart.select-dropdown', function (event) {
+        var inDropdown = $(event.target).closest('.select-dropdown').length > 0;
+        if (!inDropdown) {
+          $('.select-dropdown').each(function (index, dropdown) { $(dropdown).data('select-dropdown').close(); });
         }
       });
 
     });
 
     // set text on certain events
-    this.$element.on('change', function () { this.handleChange(); }.bind(this));
+    this.$element.on('change.select-dropdown', function () { this.handleChange(); }.bind(this));
     this.updateText();
   };
 
-  Multiselect.prototype = {
+  SelectDropdown.prototype = {
 
     isMobile: function () {
       return $(window).width() < 768;
     },
 
     isOpen: function () {
-      return this.$element.hasClass('multiselect--open');
+      return this.$element.hasClass('select-dropdown--open');
     },
 
     open: function () {
-      // close all other multiselects
-      $('.multiselect--open').not(this.$element).each(function (index, multiselect) { $(multiselect).data('multiselect').close(); });
-      this.$element.addClass('multiselect--open');
+      // close all other dropdowns
+      $('.select-dropdown--open').not(this.$element).each(function (index, dropdown) { $(dropdown).data('select-dropdown').close(); });
+      this.$element.addClass('select-dropdown--open');
       this.$body.slideDown(200);
 
       if (this.isMobile()) {
@@ -75,7 +75,7 @@ var SelectDropdown = (function () {
       }
       $(':focus').blur();
       this.$body.slideUp(200);
-      this.$element.removeClass('multiselect--open');
+      this.$element.removeClass('select-dropdown--open');
 
       if (this.isMobile()) {
         this.unlockScroll();
@@ -118,6 +118,6 @@ var SelectDropdown = (function () {
     }
   };
 
-  return Multiselect;
+  return SelectDropdown;
 
 })();
