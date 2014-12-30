@@ -1,3 +1,7 @@
+.multiselect {
+  position: relative;
+}
+
 .multiselect__control,
 .multiselect-wrapper {
   position: relative;

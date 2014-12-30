@@ -1,3 +1,8 @@
+.my-select-dropdown {
+  max-width: 40%;
+  min-width: 320px;
+}
+
 .options {
   margin: 0 0 10px;
   padding: 0;
