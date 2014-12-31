@@ -1,0 +1,19 @@
+{
+  "name": "select-dropdown",
+  "main": "src/select-dropdown.js",
+  "homepage": "https://github.com/deseretdigital-ui/select-dropdown",
+  "authors": [
+    "Joshua Stoutenburg <jehoshua02@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": ">=1.7"
+  }
+}

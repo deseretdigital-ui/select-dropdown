@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- these meta tags are important -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta http-equiv="x-ua-compatible" content="IE=edge" />
+
+  <title>SelectDropdown Example</title>
+
+  <script src="bower_components/jquery/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="bower_components/select-dropdown/src/select-dropdown.css" />
+  <script src="bower_components/select-dropdown/src/select-dropdown.js"></script>
+
+  <link href="example.css" rel="stylesheet" />
+  <script src="example.js"></script>
+
+</head>
+<body>
+
+  <div class="select-dropdown my-select-dropdown" id="mySelectDropdown">
+    <div class="select-dropdown__control select-dropdown__toggle">
+      <select class="form__input" id="make">
+        <option class="select-dropdown__control-text">Select</option>
+      </select>
+    </div>
+    <div class="select-dropdown__dropdown">
+      <ul class="options">
+        <li class="options__item">
+          <label>
+            <input type="checkbox" value="Full – Finished" class="options__checkbox">
+            <div class="options__text">Full - Finished</div>
+          </label>
+        </li>
+        <li class="options__item">
+          <label>
+            <input type="checkbox" value="Full – Partially Finished" class="options__checkbox">
+            <div class="options__text">Full - Partially Finished</div>
+          </label>
+        </li>
+        <li class="options__item">
+          <label>
+            <input type="checkbox" value="Full – Unfinished" class="options__checkbox">
+            <div class="options__text">Full - Unfinished</div>
+          </label>
+        </li>
+        <li class="options__item">
+          <label>
+            <input type="checkbox" value="Shelf/Crawl Space" class="options__checkbox">
+            <div class="options__text">Shelf/Crawl Space</div>
+          </label>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>
